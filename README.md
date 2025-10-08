@@ -70,11 +70,25 @@ Este archivo evita que `.env` y las dependencias se suban a GitHub.
 
 ### 3\. Ejecución del Servidor
 
-Una vez que tenga los archivos de código (`server.js`, `client.js`, `index.html`) en su lugar (ver archivos provistos en conversaciones anteriores), inicie el servidor de Node.js:
+Una vez que tenga los archivos de código (`server.js`, `client.js`, `index.html`) en su lugar y haya configurado su `.env`, siga estos pasos para iniciar el agente:
 
-node server.js
+1.  **Iniciar el Backend:**
+    Ejecute el servidor de Node.js en su terminal:
+    ```bash
+    npm start 
+    # (También puede usar: node server.js)
+    ```
+    **Verificación:** Si el servidor inicia correctamente, verá el mensaje: **"Servidor del Tutor de ML corriendo en http://localhost:3000"**.
 
-El servidor estará corriendo en `http://localhost:3000`.
+    Verificación de Servidor: Cuando inicie correctamente, verá el mensaje de confirmación en la consola.
+    ![Terminal mostrando 'Servidor del Tutor de ML corriendo...'](servidor.jp)
+    
+2.  **Abrir la Interfaz (Frontend):**
+    Abra el archivo `index.html` en su navegador web. El frontend se conectará automáticamente al backend.
+    
+    **¡Ya puede usar el Agente!**
+    <!-- Reemplace 'assets/index_ready.png' con la ruta real de su imagen -->
+    ![Interfaz del Tutor de Machine Learning lista en el navegador](INDEX1.jpg)
 
 ### 4\. Abrir la Interfaz
 
