@@ -1,4 +1,4 @@
-# 🧠 Gemini ML Tutor (Tutor de Machine Learning Seguro) 👨‍🏫
+# 🧠 Gemini ML Tutor (Tutor de Machine Learning) 👨‍🏫
 
 Este proyecto demuestra cómo crear un **Agente de IA personalizado** con rol de tutor usando la API de **Google Gemini** e implementarlo de forma segura en una interfaz web con HTML, CSS y JavaScript.
 
@@ -81,7 +81,7 @@ Una vez que tenga los archivos de código (`server.js`, `client.js`, `index.html
     **Verificación:** Si el servidor inicia correctamente, verá el mensaje: **"Servidor del Tutor de ML corriendo en http://localhost:3000"**.
 
     Verificación de Servidor: Cuando inicie correctamente, verá el mensaje de confirmación en la consola.
-    ![Terminal mostrando 'Servidor del Tutor de ML corriendo...'](servidor.jp)
+    ![Terminal mostrando 'Servidor del Tutor de ML corriendo...'](servidor.jpg)
     
 2.  **Abrir la Interfaz (Frontend):**
     Abra el archivo `index.html` en su navegador web. El frontend se conectará automáticamente al backend.
