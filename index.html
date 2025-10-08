@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutor de Machine Learning (Seguro)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="agenteIAlogo.jpg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>🧠 Tutor de Machine Learning 👨‍🏫</h1>
+    <div id="chat-window"></div>
+    <div id="controls">
+        <input type="text" id="user-input" placeholder="Pregunta sobre Machine Learning..." onkeydown="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+    
+    <script src="client.js"></script>
+</body>
+</html>

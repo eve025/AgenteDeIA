@@ -1,0 +1,6 @@
+# .gitignore
+# Dependencias del proyecto Node
+/node_modules
+
+# Archivos de configuración y secretos que NO deben ser públicos
+.env 
