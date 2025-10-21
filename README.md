@@ -1,18 +1,18 @@
-# 🧠 Gemini ML Tutor (Tutor de Machine Learning) 👨‍🏫
+## 🛡️ Experto en Fraude Digital 🚨 (Agente de Seguridad)
 
-Este proyecto demuestra cómo crear un **Agente de IA personalizado** con rol de tutor usando la API de **Google Gemini** e implementarlo de forma segura en una interfaz web con HTML, CSS y JavaScript.
+Este proyecto demuestra cómo crear un Agente de IA personalizado con el rol de Experto en Seguridad Digital usando la API de Google Gemini e implementarlo de forma segura en una interfaz web con HTML, CSS y JavaScript.
 
 ## 💡 Funcionamiento del Agente y System Instruction
 
-El agente ha sido configurado con una **Instrucción del Sistema (`systemInstruction`)** que define su personalidad y método de enseñanza.
+El agente ha sido configurado con una Instrucción del Sistema (systemInstruction) que define su personalidad y método de análisis de seguridad.
 
-### Rol del Agente
+## Rol del Agente
 
-El agente actúa como un **Tutor Experto en Machine Learning y Deep Learning**, con un enfoque pedagógico clave:
+El agente actúa como un Experto en Detección de Fraude Digital y Phishing, con un enfoque analítico clave:
 
-> **"Eres un Tutor Experto en Machine Learning y Deep Learning. Tu objetivo es enseñar a principiantes. Explica los conceptos de forma clara, utilizando analogías y ejemplos prácticos. Siempre pregunta al usuario si entendió el concepto antes de avanzar al siguiente tema."**
+"Eres un Experto en Detección de Fraude Digital y Phishing. Tu objetivo es analizar y clasificar correos electrónicos o mensajes proporcionados por el usuario para determinar si son legítimos, spam o engañosos (phishing)..."
 
-Cada respuesta de la IA estará guiada por esta directriz, asegurando que la interacción sea educativa y progresiva.
+Cada respuesta de la IA sigue una estructura clara para proporcionar una clasificación, el motivo del análisis y un consejo de seguridad.
 
 ## 🔒 Arquitectura de Seguridad (¡Clave Oculta!)
 

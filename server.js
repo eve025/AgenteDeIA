@@ -13,62 +13,58 @@ const port = 3000;
 // Inicializa Gemini usando la clave oculta en la variable de entorno
 const ai = new GoogleGenAI(process.env.GEMINI_API_KEY);
 
-// 🧠 System Instruction: La definición del Tutor de Machine Learning
-const systemInstruction = "Eres un Tutor Experto en Machine Learning y Deep Learning. Tu objetivo es enseñar a principiantes. Explica los conceptos de forma clara, utilizando analogías y ejemplos prácticos. Siempre pregunta al usuario si entendió el concepto antes de avanzar al siguiente tema.";
+//System Instruction: ROL ACTUALIZADO A EXPERTO EN PHISHING
+const systemInstruction = `
+Eres un Experto en Detección de Fraude Digital y Phishing. Tu objetivo es analizar y clasificar correos electrónicos o mensajes proporcionados por el usuario para determinar si son legítimos, spam o engañosos (phishing).
+
+Debes seguir esta estructura de análisis para cada mensaje:
+1. **Clasificación Inmediata:** Marca el mensaje como: "Legítimo", "Spam", o "Phishing (Engañoso)".
+2. **Motivo del Análisis:** Explica por qué llegaste a esa clasificación, basándote en patrones de fraude (lenguaje urgente, solicitudes de datos, errores).
+3. **Consejo de Seguridad:** Proporciona una recomendación de seguridad específica relacionada con ese mensaje.
+
+Manten un tono profesional, claro y enfocado en la seguridad.
+`;
 
 // Configuración de Express y middlewares
 app.use(cors()); 
 app.use(express.json()); 
 
-// *************************************************************************
 // NUEVA RUTA GET (Para evitar el error "Cannot GET /" en el navegador)
-
-//ya que si se inicia el servidor  y se va al local host aparece Cannot GET / como texto 
-
-// Cuando se ejecuta node server.js, su backend de Node.js con Express se inicia y comienza a escuchar peticiones en el puerto 3000.
-
-// El mensaje "Servidor del Tutor de ML corriendo en http://localhost:3000" solo significa que el servidor existe y está escuchando.
-
-// El error Cannot GET / ocurre porque Express solo tiene definido un endpoint para las peticiones POST (/chat).
-
-// Cuando usted abre http://localhost:3000 directamente en el navegador, este intenta hacer una petición GET a la ruta raíz (/), pero su código server.js no tiene definida una ruta GET para esa dirección. Solo tiene:
-
-// app.post('/chat', async (req, res) => { /* ... */ });
-// Como no hay una ruta app.get('/') definida, Express devuelve el error "Cannot GET /".
-// *************************************************************************
 app.get('/', (req, res) => {
-    // Alguien visitó http://localhost:3000 directamente.
-    // Enviamos un mensaje de estado en lugar de un error.
-    res.send('Servidor del Agente de ML activo y listo para el chat POST /chat. Por favor, use el archivo index.html para la interfaz.');
+ // Al visitar http://localhost:3000 directamente.
+ // se envia un mensaje de estado en lugar de un error.
+ res.send('Servidor del Agente de Detección de Fraude activo y listo para el chat POST /chat. Por favor, use el archivo index.html para la interfaz.');
 });
-// *************************************************************************
 
 // Endpoint para el chat (Ruta principal que usa el frontend)
 app.post('/chat', async (req, res) => {
-    const userMessage = req.body.message;
+const userMessage = req.body.message;
 
-    if (!userMessage) {
-        return res.status(400).send({ error: 'Falta el mensaje del usuario.' });
-    }
+if (!userMessage) {
+ return res.status(400).send({ error: 'Falta el mensaje del usuario.' });
+} 
 
-    try {
-        // Llama a la API de Gemini, inyectando la System Instruction
-        const result = await ai.models.generateContent({
-            model: "gemini-2.5-flash", 
-            contents: userMessage,
-            config: {
-                systemInstruction: systemInstruction, // ✨ ¡El agente se define aquí!
-            },
-        });
+// Adjuntamos una instrucción al mensaje para recordarle a la IA su tarea
+const fullUserPrompt = `Analiza y clasifica este mensaje: "${userMessage}"`;
 
-        res.send({ response: result.text });
-    } catch (error) {
-        console.error("Error en la API de Gemini:", error);
-        res.status(500).send({ error: "Error al comunicarse con el Tutor de ML. Verifique su clave de API." });
-    }
+try {
+// Llama a la API de Gemini, inyectando la System Instruction
+const result = await ai.models.generateContent({
+model: "gemini-2.5-flash", 
+contents: fullUserPrompt,
+config: {
+ systemInstruction: systemInstruction, // ✨ ¡El agente se define aquí!
+ },
+ });
+
+res.send({ response: result.text });
+} catch (error) {
+ console.error("Error en la API de Gemini:", error);
+ res.status(500).send({ error: "Error al comunicarse con el Experto en Fraude. Verifique su clave de API." });
+}
 });
 
 // Iniciar el servidor
 app.listen(port, () => {
-    console.log(`Servidor del Tutor de ML corriendo en http://localhost:${port}`);
+console.log(`Servidor del Agente de Detección de Fraude corriendo en http://localhost:${port}`);
 });
