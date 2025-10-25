@@ -88,7 +88,7 @@ Una vez que tenga los archivos de código (`server.js`, `client.js`, `index.html
     
     **¡Ya puede usar el Agente!**
     <!-- Reemplace 'assets/index_ready.png' con la ruta real de su imagen -->
-    ![Interfaz del Tutor de Machine Learning lista en el navegador](INDEX1.jpg)
+    ![Interfaz del Tutor de Machine Learning lista en el navegador](INDEX1.png)
 
 ### 4\. Abrir la Interfaz
 
